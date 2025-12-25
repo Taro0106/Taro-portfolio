@@ -427,6 +427,25 @@ strong {
   background: #fafafa;
 }
 
+/* --- 滾動條整體樣式 --- */
+.modal-right::-webkit-scrollbar {
+  width: 6px; /* 寬度設細一點比較精緻 */
+}
+
+/* --- 滾動條軌道 (Track) --- */
+.modal-right::-webkit-scrollbar-track {
+  background: rgba(240, 240, 245, 0.5); /* 淺灰色半透明軌道 */
+  border-radius: 10px;
+}
+
+/* --- 滾動條滑塊 (Thumb) --- */
+.modal-right::-webkit-scrollbar-thumb {
+  background: var(--primary-light); /* 使用你的主題淺紫色 */
+  border-radius: 10px;
+  border: 1px solid transparent; /* 增加一點邊距感 */
+  transition: background 0.3s ease;
+}
+
 .modal-title {
   font-size: 1.8rem;
   color: #4a4a68;
