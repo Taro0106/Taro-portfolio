@@ -234,22 +234,51 @@ const openModal = (project) => {
   pointer-events: none;
 }
 
-/* 網格佈局 */
+/* 網格佈局：限制最多三欄，且在小螢幕自動調整 */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* 優先嘗試平分三欄，最小不低於 300px (防止卡片太擠) */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 90%; /* 限制總寬度，防止在大螢幕分太開 */
   margin: 0 auto;
 }
 
-/* 小卡片樣式 */
+/* 響應式：針對平板與手機調整欄數 */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 平板顯示兩欄 */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 手機顯示一欄 */
+    max-width: 400px; /* 手機版限制卡片不要太寬 */
+  }
+}
+
+/* 確保小卡片在任何寬度下都美觀 */
 .small-card {
   background: white;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid #eee;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 增加一點彈跳感 */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* 讓所有卡片高度齊平 */
+}
+
+/* 確保按鈕始終在底部 */
+.card-body {
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 自動撐開空間 */
 }
 
 .small-card:hover {
@@ -262,11 +291,6 @@ const openModal = (project) => {
   width: 100%;
   height: 200px;
   object-fit: cover;
-}
-
-.card-body {
-  padding: 20px;
-  text-align: center;
 }
 
 .tag-group {

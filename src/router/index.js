@@ -1,8 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router' // 1. 改成引用 createWebHashHistory
 import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // 2. 將 history 改為 Hash 模式
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',

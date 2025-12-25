@@ -12,35 +12,42 @@ import Navbar from './components/Navbar.vue'
 
 <style>
 /* 全域重置 */
+*, *::before, *::after {
+  box-sizing: border-box; /* 確保 padding 不會撐開寬度導致頁面晃動 */
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%; /* 必須設定，否則子元素百分比會失效 */
-  overflow: hidden; /* 禁止 body 滾動，改由 content 滾動 */
+  height: 100%;
+  width: 100vw;       /* 強制寬度等於視窗寬 */
+  overflow-x: hidden; /* 核心：禁止任何橫向滾動 */
   font-family: 'Inter', -apple-system, sans-serif;
-  
+  background-color: #fff;
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* 整個視窗高度 */
+  height: 100vh;
+  width: 100%;        /* 確保不超出 body */
+  overflow-x: hidden; /* 第二道防線 */
 }
 
 .content {
-  flex: 1;          /* 自動填滿剩餘空間 */
-  overflow-y: auto; /* 內容超過時顯示滾動條 */
+  flex: 1;
+  width: 100%;
+  max-width: 100%;    /* 限制最大寬度，防止子組件撐開 */
+  overflow-y: auto;
+  overflow-x: hidden; /* 禁止內容產生橫向晃動 */
   display: flex;
   flex-direction: column;
-  /* 隱藏滾動條：適用於 Chrome, Safari, Edge, Opera */
+
+  /* 隱藏滾動條 */
   &::-webkit-scrollbar {
     display: none;
   }
-
-  /* 隱藏滾動條：適用於 Firefox */
   scrollbar-width: none;
-
-  /* 隱藏滾動條：適用於 IE 和舊版 Edge */
   -ms-overflow-style: none;
 }
 </style>

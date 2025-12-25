@@ -132,40 +132,65 @@
   }
 }
 
+/* --- 1. 修改基礎容器設定 --- */
 .timeline-container {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  padding-left: 30px; /* 給左側線條留空間 */
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    /* 這裡設定 50px，給左邊足夠的空間放置線與圓點 */
+    padding-left: 50px; 
 }
 
-/* 垂直線條 */
+/* 垂直線條：精準定位 */
 .timeline-container::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 10px;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--primary-color), var(--primary-light), transparent);
+    content: '';
+    position: absolute;
+    /* 這裡設定為 20px，線條寬度 2px，所以中心點在 21px */
+    left: 20px; 
+    top: 10px;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--primary-light), transparent);
 }
 
+/* --- 2. 調整時間線的小圓點位置（對齊線條中心） --- */
+.time-point {
+    position: absolute;
+    /* 圓點寬度 14px，要讓它中心點落在 21px 上 */
+    /* 計算方式：線條位置 20px + (線寬 2px / 2) - (圓點寬 14px / 2) = 14px */
+    /* 所以 left 要設定為與容器邊距抵銷的位置 */
+    left: -37px; 
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* --- 3. 響應式優化（手機螢幕） --- */
+@media (max-width: 768px) {
+    .timeline-section {
+        padding: 60px 15px; 
+    }
+
+    .timeline-container {
+        padding-left: 45px; /* 手機版稍微縮減一點點 */
+    }
+
+    /* 手機版圓點微調，維持在線條上 */
+    .time-point {
+        left: -32px; 
+    }
+
+    .timeline-container::before {
+        left: 20px; /* 線條位置在手機版通常不變 */
+    }
+}
 .timeline-item {
   position: relative;
   margin-bottom: 60px; /* 每個節點的距離 */
-}
-
-/* 時間軸的小圓點 */
-.time-point {
-  position: absolute;
-  left: -35px; /* 對齊線條 */
-  top: 5px;
-  width: 12px;
-  height: 12px;
-  background: white;
-  border: 3px solid var(--primary-color);
-  border-radius: 50%;
-  z-index: 2;
 }
 
 /* 預設狀態：淡淡的灰色邊框 */
