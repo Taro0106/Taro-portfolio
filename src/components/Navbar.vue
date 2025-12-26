@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const brandName = ref('Taro’s Portfolio')
+const isMenuOpen = ref(false)
+
 const navLinks = ref([
   { name: '首頁', path: '/' },
   { name: '作品集', path: '/about' },
@@ -18,9 +20,15 @@ const navLinks = ref([
         <span class="brand-name">{{ brandName }}</span>
       </RouterLink>
 
-      <ul class="nav-menu">
+      <button class="mobile-toggle" @click="isMenuOpen = !isMenuOpen" :class="{ 'is-active': isMenuOpen }">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <ul class="nav-menu" :class="{ 'nav-active': isMenuOpen }">
         <li v-for="link in navLinks" :key="link.name">
-          <RouterLink :to="link.path" class="nav-item">
+          <RouterLink :to="link.path" class="nav-item" @click="isMenuOpen = false">
             {{ link.name }}
           </RouterLink>
         </li>
@@ -30,11 +38,10 @@ const navLinks = ref([
 </template>
 
 <style scoped>
-/* 導覽列主體 */
 .navbar {
   width: 100%;
   background-color: var(--primary-light);
-  box-shadow: 0 4px 12px var(--shadow-navbar); /* 稍微加深陰影讓質感更好 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   padding: 0.8rem 0;
   position: sticky;
   top: 0;
@@ -42,48 +49,40 @@ const navLinks = ref([
   height: 70px;
 }
 
-/* 內容容器 */
 .container {
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
-/* --- 左側區域：Logo & 名稱 --- */
 .brand-group {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-.brand-group:hover {
-  opacity: 0.8;
 }
 
 .logo-img {
-  width: 40px; /* 稍微放大一點 */
+  width: 40px;
   height: 40px;
   object-fit: contain;
-  border-radius: 8px; /* 如果 logo 是方形的，加點圓角更可愛 */
+  border-radius: 8px;
 }
 
 .brand-name {
   font-size: 1.5rem;
-  font-weight: 800; /* 加粗 */
+  font-weight: 800;
   color: var(--text-main);
   letter-spacing: -0.5px;
-  font-family: 'Inter', sans-serif; /* 建議使用簡潔的字體 */
 }
 
-/* --- 右側區域：選單 --- */
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem; /* 增加一點間距 */
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
@@ -94,17 +93,15 @@ const navLinks = ref([
   font-weight: 600;
   font-size: 1.05rem;
   padding: 8px 0;
-  transition: var(--transition-smooth);
   position: relative;
+  transition: 0.3s;
 }
 
-/* 滑鼠懸停與選中狀態 */
 .nav-item:hover,
 .router-link-active {
-  color: var(--primary-color) !important;
+  color: var(--text-main) !important;
 }
 
-/* 底線動畫效果 (選配，增加高級感) */
 .nav-item::after {
   content: '';
   position: absolute;
@@ -112,8 +109,8 @@ const navLinks = ref([
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-color);
-  transition: var(--transition-smooth);
+  background-color: var(--text-main);
+  transition: 0.3s;
 }
 
 .nav-item:hover::after,
@@ -121,20 +118,58 @@ const navLinks = ref([
   width: 100%;
 }
 
-/* 響應式微調 */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: 0.3s;
+}
+
 @media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
+  .mobile-toggle {
+    display: flex;
   }
+
   .nav-menu {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    right: 20px;
+    background-color: color-mix(in srgb, var(--primary-light), transparent 40%); 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: center;
     gap: 1.2rem;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  .brand-name {
-    font-size: 1.2rem;
+
+  .nav-menu .nav-item {
+    color: #fff; 
   }
-  .logo-img {
-    width: 32px;
-    height: 32px;
+
+  .nav-menu.nav-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
+
+  .mobile-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .mobile-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .mobile-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 </style>

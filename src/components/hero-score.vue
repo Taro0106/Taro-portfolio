@@ -52,7 +52,7 @@
 
 .hero-subtitle {
   display: flex;
-  align-items: center; /* 關鍵：確保文字與按鈕中心點對齊 */
+  align-items: center; 
   justify-content: center;
   gap: 20px;
   font-size: 1.1rem;
@@ -66,28 +66,26 @@
 
 .divider {
   width: 1.5px;
-  height: 24px; /* 稍微拉長一點配合按鈕高度 */
+  height: 24px; 
   background-color: var(--text-main);
   opacity: 0.3;
 }
 
 .detail-btn {
-  /* 移除 margin-top，因為在 flex 容器內不需要它來推開位子 */
   margin-top: 0; 
-  padding: 8px 24px; /* 稍微縮減 padding 讓它跟文字並排時比例更和諧 */
+  padding: 8px 24px; 
   background: white;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
   border-radius: 50px;
   font-weight: bold;
-  text-decoration: none; /* 移除超連結底線 */
+  text-decoration: none; 
   cursor: pointer;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
 }
 
-/* Hover 效果保持不變 */
 .detail-btn:hover {
   background: var(--primary-color);
   color: white;

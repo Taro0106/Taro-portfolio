@@ -9,7 +9,7 @@
             <div class="tools-grid">
                 <div class="tool-card">
                     <div class="card-header">
-                        <h3>前端</h3>
+                        <h3 style="color: var(--text-main);">前端</h3>
                     </div>
                     <div class="pill-group">
                         <span class="tech-pill">Vue.js</span>
@@ -21,7 +21,7 @@
 
                 <div class="tool-card">
                     <div class="card-header">
-                        <h3>後端</h3>
+                        <h3 style="color: var(--text-main);">後端</h3>
                     </div>
                     <div class="pill-group">
                         <span class="tech-pill">Python</span>
@@ -32,7 +32,7 @@
 
                 <div class="tool-card">
                     <div class="card-header">
-                        <h3>資料庫</h3>
+                        <h3 style="color: var(--text-main);">資料庫</h3>
                     </div>
                     <div class="pill-group">
                         <span class="tech-pill">MS SQL</span>
@@ -66,9 +66,9 @@
 
 .section-title {
   font-size: 2.2rem;
-  color: var(--primary-color); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
-  letter-spacing: 4px; /* 讓中文更有張力 */
+  color: var(--primary-color);  
+  font-weight: 850;  
+  letter-spacing: 4px;  
   position: relative;
   z-index: 2;
   margin: 0;
@@ -90,7 +90,7 @@
   font-size: 5rem;
   font-weight: 900;
   color: var(--primary-light);
-  opacity: 0.4; /* 隱隱約約的感覺 */
+  opacity: 0.4;  
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -132,7 +132,7 @@
 }
 
 .card-header h3 {
-  font-size: 1.15rem; /* 中文標題稍微大一點點 */
+  font-size: 1.15rem; 
   color: #4a4a68;
   font-weight: 800;
   margin: 0;
@@ -146,7 +146,6 @@
 }
 
 .tech-pill {
-  /* 延續空心橢圓設計 */
   border: 1.5px solid var(--primary-light);
   color: #5a5a82; 
   padding: 4px 12px;
@@ -157,7 +156,6 @@
   transition: all 0.2s;
 }
 
-/* 響應式：確保手機版標題跟卡片一樣置中好看 */
 @media (max-width: 900px) {
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);

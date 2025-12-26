@@ -1,7 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-
-// 1. 定義作品資料陣列
 const projects = ref([
   {
     id: 1,
@@ -110,7 +108,6 @@ const projects = ref([
   }
 ])
 
-// 2. Modal 控制邏輯
 const isModalOpen = ref(false)
 const currentProject = ref(null)
 
@@ -203,9 +200,9 @@ const openModal = (project) => {
 
 .section-title {
   font-size: 2.2rem;
-  color: var(--primary-color); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
-  letter-spacing: 4px; /* 讓中文更有張力 */
+  color: var(--primary-color);  
+  font-weight: 850;   
+  letter-spacing: 4px; 
   position: relative;
   z-index: 2;
   margin: 0;
@@ -227,58 +224,54 @@ const openModal = (project) => {
   font-size: 5rem;
   font-weight: 900;
   color: var(--primary-light);
-  opacity: 0.4; /* 隱隱約約的感覺 */
+  opacity: 0.4; 
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 10px;
   pointer-events: none;
 }
 
-/* 網格佈局：限制最多三欄，且在小螢幕自動調整 */
 .projects-grid {
   display: grid;
-  /* 優先嘗試平分三欄，最小不低於 300px (防止卡片太擠) */
   grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
   width: 100%;
-  max-width: 90%; /* 限制總寬度，防止在大螢幕分太開 */
+  max-width: 90%; 
   margin: 0 auto;
 }
 
-/* 響應式：針對平板與手機調整欄數 */
 @media (max-width: 1024px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* 平板顯示兩欄 */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
   }
 }
 
 @media (max-width: 650px) {
   .projects-grid {
-    grid-template-columns: 1fr; /* 手機顯示一欄 */
-    max-width: 400px; /* 手機版限制卡片不要太寬 */
+    grid-template-columns: 1fr; 
+    max-width: 400px; 
   }
 }
 
-/* 確保小卡片在任何寬度下都美觀 */
 .small-card {
   background: white;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid #eee;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 增加一點彈跳感 */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
   display: flex;
   flex-direction: column;
-  height: 100%; /* 讓所有卡片高度齊平 */
+  height: 100%; 
 }
 
-/* 確保按鈕始終在底部 */
+
 .card-body {
   padding: 25px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  flex-grow: 1; /* 自動撐開空間 */
+  flex-grow: 1; 
 }
 
 .small-card:hover {
@@ -312,8 +305,8 @@ const openModal = (project) => {
 
 .item_title {
   font-size: 1.5rem;
-  color: var(--text-main); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
+  color: var(--text-main);  
+  font-weight: 850;   
   position: relative;
   z-index: 2;
   margin: 0;
@@ -321,8 +314,8 @@ const openModal = (project) => {
 
 .item_description {
   font-size: 18px;
-  color: var(--text-muted); /* 你喜歡的深紫灰 */
-  font-weight: 500; /* 增加份量感 */
+  color: var(--text-muted);  
+  font-weight: 500;   
 }
 
 .detail-btn-small {
@@ -342,19 +335,18 @@ const openModal = (project) => {
   color: white;
 }
 
-/* --- Modal 核心（最重要，決定它會不會浮起來） --- */
 .modal-overlay {
-  position: fixed; /* 固定在螢幕上 */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(30, 30, 45, 0.5); /* 半透明遮罩 */
-  backdrop-filter: blur(10px); /* 磨砂玻璃 */
+  background: rgba(30, 30, 45, 0.5); 
+  backdrop-filter: blur(10px); 
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999; /* 最高的層級 */
+  z-index: 9999; 
 }
 
 .modal-content {
@@ -376,7 +368,6 @@ const openModal = (project) => {
   overflow: hidden;
 }
 
-/* --- 左側圖片展示（針對長方形優化） --- */
 .modal-left {
   flex: 1.6;
   overflow-y: auto;
@@ -385,31 +376,26 @@ const openModal = (project) => {
   border-right: 1px solid #f0f0f5;
 }
 
-/* --- 滾動條整體樣式 --- */
 .modal-left::-webkit-scrollbar {
-  width: 6px; /* 寬度設細一點比較精緻 */
+  width: 6px; 
 }
 
-/* --- 滾動條軌道 (Track) --- */
 .modal-left::-webkit-scrollbar-track {
-  background: rgba(240, 240, 245, 0.5); /* 淺灰色半透明軌道 */
+  background: rgba(240, 240, 245, 0.5); 
   border-radius: 10px;
 }
 
-/* --- 滾動條滑塊 (Thumb) --- */
 .modal-left::-webkit-scrollbar-thumb {
-  background: var(--primary-light); /* 使用你的主題淺紫色 */
+  background: var(--primary-light); 
   border-radius: 10px;
-  border: 1px solid transparent; /* 增加一點邊距感 */
+  border: 1px solid transparent; 
   transition: background 0.3s ease;
 }
 
-/* --- 滑塊懸停效果 (Hover) --- */
 .modal-left::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color); /* 懸停時變深紫色 */
+  background: var(--primary-color); 
 }
 
-/* 針對 Firefox 瀏覽器 (標準語法) */
 .modal-left {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-light) transparent;
@@ -417,7 +403,7 @@ const openModal = (project) => {
 
 .modal-gallery-img {
   width: 100%;
-  height: auto; /* 保持長方形比例 */
+  height: auto; 
   display: block;
   object-fit: contain;
   border-radius: 12px;
@@ -426,12 +412,28 @@ const openModal = (project) => {
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* --- 右側內容 --- */
 .modal-right {
   flex: 1;
   padding: 50px 40px;
   overflow-y: auto;
   background: #fafafa;
+}
+
+.modal-right::-webkit-scrollbar {
+  width: 6px; 
+}
+
+
+.modal-right::-webkit-scrollbar-track {
+  background: rgba(240, 240, 245, 0.5); 
+  border-radius: 10px;
+}
+
+.modal-right::-webkit-scrollbar-thumb {
+  background: var(--primary-light); 
+  border-radius: 10px;
+  border: 1px solid transparent; 
+  transition: background 0.3s ease;
 }
 
 .modal-title {
@@ -456,7 +458,6 @@ const openModal = (project) => {
   text-align: justify;
 }
 
-/* --- 關閉按鈕 --- */
 .close-btn {
   position: absolute;
   top: 20px;
@@ -473,7 +474,6 @@ const openModal = (project) => {
   color: #999;
 }
 
-/* --- 過渡動畫 --- */
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.4s ease;
 }
@@ -481,7 +481,6 @@ const openModal = (project) => {
   opacity: 0;
 }
 
-/* --- 響應式佈局 --- */
 @media (max-width: 900px) {
   .modal-layout { flex-direction: column; }
   .modal-left { flex: 1; max-height: 50%; }

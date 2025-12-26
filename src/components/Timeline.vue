@@ -247,9 +247,9 @@
 
 .section-title {
   font-size: 2.2rem;
-  color: var(--primary-color); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
-  letter-spacing: 4px; /* 讓中文更有張力 */
+  color: var(--primary-color);  
+  font-weight: 850;  
+  letter-spacing: 4px;  
   position: relative;
   z-index: 2;
   margin: 0;
@@ -271,7 +271,7 @@
   font-size: 5rem;
   font-weight: 900;
   color: var(--primary-light);
-  opacity: 0.4; /* 隱隱約約的感覺 */
+  opacity: 0.4;  
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 10px;

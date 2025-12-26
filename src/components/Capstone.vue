@@ -1,12 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-
-// 1. 定義畢業專題資料
 const CapstoneData = ref([
   {
     title: '新手業務員輔助系統',
     tags: ['團隊', 'Vue', 'FastAPI', 'MS SQL', 'LINE Bot'],
-    image: new URL('../pic/專題PPT.jpg', import.meta.url).href, // 封面圖
+    image: new URL('../pic/專題PPT.jpg', import.meta.url).href, 
     images: [
       new URL('../pic/FuboGo2.png', import.meta.url).href,
       new URL('../pic/FuboGo3.png', import.meta.url).href,
@@ -30,8 +28,6 @@ const CapstoneData = ref([
     <br>我在團隊中擔任核心開發角色，負責前後端串接整合、資料庫架構設計及部分 UI/UX 介面開發，並深度參與系統架構規劃與使用者流程設計。從初期的需求訪談、功能發想到最終的 Demo 展示與簡報，我完整經歷了業界規格的開發生命週期。<br>此作品最終於專題競賽中榮獲佳作，這段經驗不僅磨練了我在團隊協作中的溝通能力，更建立了我對大型系統開發規範的實戰經驗，也奠定了我投入軟體開發領域的專業基礎。`
   }
 ])
-
-// 2. Modal 控制邏輯
 const isModalOpen = ref(false)
 const currentProject = ref(null)
 
@@ -130,9 +126,8 @@ const openModal = (project) => {
 
 .section-title {
   font-size: 2.2rem;
-  color: var(--primary-color); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
-  letter-spacing: 4px; /* 讓中文更有張力 */
+  color: var(--primary-color);
+  font-weight: 850; 
   position: relative;
   z-index: 2;
   margin: 0;
@@ -154,14 +149,13 @@ const openModal = (project) => {
   font-size: 5rem;
   font-weight: 900;
   color: var(--primary-light);
-  opacity: 0.4; /* 隱隱約約的感覺 */
+  opacity: 0.4;
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: 10px;
   pointer-events: none;
 }
 
-/* 專題大卡片佈局 */
 .project-card {
   display: flex;
   background: rgba(255, 255, 255, 0.7);
@@ -169,13 +163,12 @@ const openModal = (project) => {
   border-radius: 30px;
   border: 1.5px solid var(--primary-light);
   box-shadow: 0 20px 50px rgba(163, 147, 235, 0.1);
-  overflow: hidden; /* 確保內容不會超出圓角 */
+  overflow: hidden; 
   transition: all 0.4s ease;
   max-width: 90%;
   margin: 0 auto;
 }
 
-/* 圖片區域 */
 .project-image-wrapper {
   flex: 2;
   position: relative;
@@ -190,7 +183,6 @@ const openModal = (project) => {
   transition: transform 0.6s ease;
 }
 
-/* 資訊文字區域 */
 .project-info {
   flex: 1;
   padding: 50px;
@@ -229,7 +221,6 @@ p {
   font-weight: 500;
 }
 
-/* 查看詳情按鈕 - 延續發光橢圓風格 */
 .detail-btn {
   margin-top: 30px;
   width: fit-content;
@@ -253,7 +244,6 @@ p {
   transform: translateY(-2px);
 }
 
-/* Hover 互動效果 */
 .project-card:hover {
   transform: translateY(-10px);
   border-color: var(--primary-color);
@@ -262,7 +252,6 @@ p {
     0 0 30px 10px rgba(163, 147, 235, 0.15);
 }
 
-/* 響應式：手機版改為上下排列 */
 @media (max-width: 900px) {
   .project-card {
     flex-direction: column;
@@ -275,7 +264,6 @@ p {
   }
 }
 
-/* 組長標籤樣式 */
 .leader-badge {
   position: absolute;
   top: 20px;
@@ -293,11 +281,10 @@ p {
 
 strong {
   color: var(--primary-color);
-  font-weight: 850; /* 加粗字重 */
+  font-weight: 850; 
   background: linear-gradient(transparent 70%, rgba(200, 180, 255, 0.3) 70%);
 }
 
-/* Hover 強化 */
 .project-card:hover .leader-badge {
   transform: scale(1.1);
   transition: transform 0.3s ease;
@@ -322,8 +309,8 @@ strong {
 
 .item_title {
   font-size: 1.5rem;
-  color: var(--text-main); /* 你喜歡的深紫灰 */
-  font-weight: 850; /* 增加份量感 */
+  color: var(--text-main); 
+  font-weight: 850;
   position: relative;
   z-index: 2;
   margin: 0;
@@ -331,23 +318,22 @@ strong {
 
 .item_description {
   font-size: 18px;
-  color: var(--text-muted); /* 你喜歡的深紫灰 */
-  font-weight: 500; /* 增加份量感 */
+  color: var(--text-muted); 
+  font-weight: 500;
 }
 
-/* --- Modal 核心（最重要，決定它會不會浮起來） --- */
 .modal-overlay {
-  position: fixed; /* 固定在螢幕上 */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(30, 30, 45, 0.5); /* 半透明遮罩 */
-  backdrop-filter: blur(10px); /* 磨砂玻璃 */
+  background: rgba(30, 30, 45, 0.5); 
+  backdrop-filter: blur(10px); 
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999; /* 最高的層級 */
+  z-index: 9999; 
 }
 
 .modal-content {
@@ -369,7 +355,6 @@ strong {
   overflow: hidden;
 }
 
-/* --- 左側圖片展示（針對長方形優化） --- */
 .modal-left {
   flex: 1.6;
   overflow-y: auto;
@@ -378,31 +363,26 @@ strong {
   border-right: 1px solid #f0f0f5;
 }
 
-/* --- 滾動條整體樣式 --- */
 .modal-left::-webkit-scrollbar {
-  width: 6px; /* 寬度設細一點比較精緻 */
+  width: 6px; 
 }
 
-/* --- 滾動條軌道 (Track) --- */
 .modal-left::-webkit-scrollbar-track {
-  background: rgba(240, 240, 245, 0.5); /* 淺灰色半透明軌道 */
+  background: rgba(240, 240, 245, 0.5); 
   border-radius: 10px;
 }
 
-/* --- 滾動條滑塊 (Thumb) --- */
 .modal-left::-webkit-scrollbar-thumb {
-  background: var(--primary-light); /* 使用你的主題淺紫色 */
+  background: var(--primary-light); 
   border-radius: 10px;
-  border: 1px solid transparent; /* 增加一點邊距感 */
+  border: 1px solid transparent; 
   transition: background 0.3s ease;
 }
 
-/* --- 滑塊懸停效果 (Hover) --- */
 .modal-left::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-color); /* 懸停時變深紫色 */
+  background: var(--primary-color); 
 }
 
-/* 針對 Firefox 瀏覽器 (標準語法) */
 .modal-left {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-light) transparent;
@@ -410,7 +390,7 @@ strong {
 
 .modal-gallery-img {
   width: 100%;
-  height: auto; /* 保持長方形比例 */
+  height: auto; 
   display: block;
   object-fit: contain;
   border-radius: 12px;
@@ -419,7 +399,6 @@ strong {
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* --- 右側內容 --- */
 .modal-right {
   flex: 1;
   padding: 50px 40px;
@@ -427,22 +406,21 @@ strong {
   background: #fafafa;
 }
 
-/* --- 滾動條整體樣式 --- */
+
 .modal-right::-webkit-scrollbar {
-  width: 6px; /* 寬度設細一點比較精緻 */
+  width: 6px; 
 }
 
-/* --- 滾動條軌道 (Track) --- */
+
 .modal-right::-webkit-scrollbar-track {
-  background: rgba(240, 240, 245, 0.5); /* 淺灰色半透明軌道 */
+  background: rgba(240, 240, 245, 0.5); 
   border-radius: 10px;
 }
 
-/* --- 滾動條滑塊 (Thumb) --- */
 .modal-right::-webkit-scrollbar-thumb {
-  background: var(--primary-light); /* 使用你的主題淺紫色 */
+  background: var(--primary-light); 
   border-radius: 10px;
-  border: 1px solid transparent; /* 增加一點邊距感 */
+  border: 1px solid transparent; 
   transition: background 0.3s ease;
 }
 
@@ -468,7 +446,7 @@ strong {
   text-align: justify;
 }
 
-/* --- 關閉按鈕 --- */
+
 .close-btn {
   position: absolute;
   top: 20px;
@@ -485,7 +463,7 @@ strong {
   color: #999;
 }
 
-/* --- 過渡動畫 --- */
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.4s ease;
 }
@@ -493,7 +471,7 @@ strong {
   opacity: 0;
 }
 
-/* --- 響應式佈局 --- */
+
 @media (max-width: 900px) {
   .modal-layout { flex-direction: column; }
   .modal-left { flex: 1; max-height: 50%; }

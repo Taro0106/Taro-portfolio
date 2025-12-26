@@ -9,7 +9,7 @@ const gradeList = ref([
   { course: '系統分析與設計', techs: ['MySQL', 'PHP', 'HTML / CSS'], score: 96, project: 'WISHOP' },
   { course: '進階Web程式設計', techs: ['React', 'FastAPI', 'MySQL'], score: 98, project: 'Memonity' },
   { course: '資訊系統專題', techs: ['Vue', 'FastAPI', 'MS SQL'], score: 90, project: '新手業務員輔助系統' },
-  { course: '網站架設與建置實務', techs: ['WordPress', 'Drupal'], score: '在學中', project: '-' },
+  { course: '網站架設與建置實務', techs: ['WordPress', 'Drupal'], score: '在學中', project: '產出中' },
   { course: '網頁程式設計', techs: ['ASP.NET Web Forms'], score: '在學中', project: '海獺冰淇淋' },
 ])
 </script>
@@ -56,21 +56,20 @@ const gradeList = ref([
   padding: 0 20px;
 }
 
-/* --- 回歸你原本的紫色表格外觀 --- */
 .grades-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   background: white;
-  border-radius: 20px; /* 回歸圓角 */
+  border-radius: 20px; 
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(163, 147, 235, 0.1); /* 回歸淡紫色陰影 */
+  box-shadow: 0 15px 35px rgba(163, 147, 235, 0.1); 
   border: 1px solid #f0f0f5;
   text-align: center;
 }
 
 .grades-table thead {
-  background: var(--primary-color); /* 回歸芋頭紫 */
+  background: var(--primary-color); 
   color: white;
 }
 
@@ -99,7 +98,7 @@ const gradeList = ref([
 }
 
 .tech-tag {
-  background: #f3f0ff; /* 回歸淺紫色標籤 */
+  background: #f3f0ff; 
   color: var(--primary-color);
   padding: 4px 12px;
   border-radius: 50px;
@@ -115,7 +114,6 @@ const gradeList = ref([
   justify-content: center;
 }
 
-/* --- 只針對手機版 (425px) 做結構調整，外觀依然維持紫色系 --- */
 @media (max-width: 768px) {
   .grades-table, 
   .grades-table thead, 
@@ -162,7 +160,7 @@ const gradeList = ref([
   .grades-table td::before {
     content: attr(data-label);
     font-weight: 800;
-    color: var(--primary-color); /* 標籤也用你的紫色 */
+    color: var(--text-main); 
     font-size: 0.85rem;
   }
 

@@ -24,7 +24,7 @@
                     </div>
 
                     <p class="summary">
-                        結合資管的邏輯思維與對視覺美感的追求，我致力於打造兼具功能性與設計感的網頁。喜歡挑戰複雜的互動邏輯，並將其簡化為最純粹的使用者體驗。
+                        我喜歡網頁設計，享受把想法一步步實作成畫面的過程，並思考如何讓使用者在操作時感到直覺又順暢，希望每個細節都能讓使用者感到舒服且好上手。
                     </p>
 
                 </div>
@@ -35,8 +35,8 @@
 
 <style scoped>
 .home-container {
-  padding: 100px 0; /* 給予上下足夠的呼吸空間 */
-  background-color: #faf9fe; /* 極淺紫灰色，比純白更有質感 */
+  padding: 100px 0; 
+  background-color: #faf9fe; 
 }
 
 .hero-clean {
@@ -48,10 +48,9 @@
   margin: 0 auto;
 }
 
-/* --- 左側圖像 --- */
 .image-box {
   position: relative;
-  width: 220px; /* 縮小到 220px */
+  width: 220px; 
   height: 220px;
 }
 
@@ -72,7 +71,6 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* --- 右側文字 --- */
 .text-box {
   flex: 1;
   text-align: left;
@@ -106,36 +104,29 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 30px; /* 增加與下方文字的間距 */
+  margin-bottom: 30px; 
 }
 
 .meta-pill {
-  /* 取消背景填滿，改用邊框 */
   background-color: transparent; 
-  border: 2px solid var(--primary-color); /* 使用你的主色變數 */
-  
-  /* 文字顏色與邊框一致，或是稍微深一點點 */
+  border: 2px solid var(--primary-color); 
   color: var(--primary-color); 
-  font-weight: 500; /* 保持粗體，解決字細問題 */
+  font-weight: 500; 
   font-size: 14px;
-  
-  /* 橢圓形狀 */
   padding: 4px 14px;
   border-radius: 50px;
-  
   display: inline-flex;
   align-items: center;
   transition: all 0.2s ease-in-out;
   letter-spacing: 0.5px;
 }
 
-/* 確保下方的 summary 不會顯得太重 */
 .summary {
   font-weight: 500;
   color: #5a5a75;
   line-height: 1.8;
   margin-top: 10px;
-  border-left: 3px solid var(--primary-light); /* 增加一條裝飾線區隔內容 */
+  border-left: 3px solid var(--primary-light); 
   padding-left: 15px;
   font-size: 16px;
 }
@@ -145,7 +136,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* 響應式 */
 @media (max-width: 768px) {
   .hero-clean {
     flex-direction: column;

@@ -38,18 +38,15 @@
 
 /* 主色調 */
 :root {
-  /* 主色調：芋頭紫系列 */
-  --primary-color: #A890D3;      /* 芋頭主色 */
-  --primary-light: #D4C5E2;     /* 淺芋頭色 */
-  --primary-dark: #7B62A4;      /* 深芋頭色 */
+  --primary-color: #A890D3; 
+  --primary-light: #D4C5E2;
+  --primary-dark: #7B62A4;
   
-  /* 輔助文字與背景 */
   --text-main: #543c7d;
   --text-muted: #707276;
   --bg-white: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.08);
   
-  /* 互動效果 */
   --transition-speed: 0.3s;
 }
 
