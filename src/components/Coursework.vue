@@ -61,7 +61,7 @@ const projects = ref([
   },
   {
     id: 5,
-    title: 'WITSHOP',
+    title: 'WISHOP',
     tags: ['團隊', 'HTML', 'PHP','MySQL'],
     image: new URL('../pic/witshop.png', import.meta.url).href,
     images: [

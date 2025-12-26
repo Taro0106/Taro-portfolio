@@ -5,7 +5,8 @@ import { RouterLink } from 'vue-router'
 const brandName = ref('Taro’s Portfolio')
 const navLinks = ref([
   { name: '首頁', path: '/' },
-  { name: '作品集', path: '/about' }
+  { name: '作品集', path: '/about' },
+  { name: '課堂成績', path: '/score' }
 ])
 </script>
 
