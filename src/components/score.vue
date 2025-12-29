@@ -9,7 +9,7 @@ const gradeList = ref([
   { course: '系統分析與設計', techs: ['MySQL', 'PHP', 'HTML / CSS'], score: 96, project: 'WISHOP' },
   { course: '進階Web程式設計', techs: ['React', 'FastAPI', 'MySQL'], score: 98, project: 'Memonity' },
   { course: '資訊系統專題', techs: ['Vue', 'FastAPI', 'MS SQL'], score: 90, project: '新手業務員輔助系統' },
-  { course: '網站架設與建置實務', techs: ['WordPress', 'Drupal'], score: '在學中', project: '產出中' },
+  { course: '網站架設與建置實務', techs: ['WordPress', 'Drupal'], score: '在學中', project: '輔大中國古籍整理學程(進度：90%)' },
   { course: '網頁程式設計', techs: ['ASP.NET Web Forms'], score: '在學中', project: '海獺冰淇淋' },
 ])
 </script>

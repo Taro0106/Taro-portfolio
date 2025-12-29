@@ -3,119 +3,13 @@ import { ref } from 'vue'
 const projects = ref([
   {
     id: 1,
-    title: '犀牛沙發工廠',
-    tags: ['個人','HTML'],
-    image: new URL('../pic/犀牛沙發.png', import.meta.url).href,
+    title: 'Favory(開發中)',
+    tags: ['個人','Vue','Firebase','Cloudinary'],
+    image: 'https://i.pinimg.com/736x/53/92/3b/53923bab15a5e35571859fe8576cb874.jpg',
     images: [
-      new URL('../pic/犀牛沙發.png', import.meta.url).href,
-      new URL('../pic/犀牛沙發2.png', import.meta.url).href,
-      new URL('../pic/犀牛沙發3.png', import.meta.url).href,
-      new URL('../pic/犀牛沙發4.png', import.meta.url).href
+      'https://i.pinimg.com/736x/53/92/3b/53923bab15a5e35571859fe8576cb874.jpg'
     ],
-    description: '本專案為課程指定主題，旨在針對「犀牛沙發工廠」現有網站進行全面性的視覺重構與架構優化。透過純 HTML/CSS 技術，將原本資訊較為雜亂、風格過時的傳統工廠網頁，轉型為具備現代感、品牌故事性且使用者導向的專業品牌形象官網。'
-  },
-  {
-    id: 2,
-    title: '輔大教發中心',
-    tags: ['個人','HTML'],
-    image: new URL('../pic/教發.png', import.meta.url).href,
-    images: [
-      new URL('../pic/教發.png', import.meta.url).href,
-      new URL('../pic/教發2.png', import.meta.url).href,
-      new URL('../pic/教發3.png', import.meta.url).href,
-      new URL('../pic/教發4.png', import.meta.url).href,
-      new URL('../pic/教發5.png', import.meta.url).href,
-      new URL('../pic/教發6.png', import.meta.url).href,
-      new URL('../pic/教發7.png', import.meta.url).href,
-    ],
-    description: '本專案為課程指定主題，旨在針對「輔大教發中心」現有網站進行全面性的視覺重構與架構優化。透過 純 HTML/CSS 技術，將原本資訊密度高、層級較為複雜、風格過時的官方網站，轉型為具備現代感、直覺導覽且符合學術專業形象的平台。'
-  },
-  {
-    id: 3,
-    title: '藝人資料庫',
-    tags: ['個人', 'HTML', 'PHP','MySQL'],
-    image: new URL('../pic/音樂資料庫.png', import.meta.url).href,
-    images: [
-      new URL('../pic/音樂資料庫.png', import.meta.url).href,
-      new URL('../pic/音樂資料庫2.png', import.meta.url).href,
-      new URL('../pic/音樂資料庫3.png', import.meta.url).href,
-      new URL('../pic/音樂資料庫4.png', import.meta.url).href,
-      new URL('../pic/音樂資料庫5.png', import.meta.url).href,
-      new URL('../pic/音樂資料庫6.png', import.meta.url).href
-    ],
-    description: '本專案為應用資料庫管理課程所學之理論，開發一套具備完整後端邏輯的網站。從需求分析、ERD設計、資料表正規化到最後使用 PHP 串接 MySQL 資料庫，實現一個具備動態資料處理能力的系統。'
-  },
-  {
-    id: 4,
-    title: '輔大活動管理系統',
-    tags: ['個人', 'HTML', 'PHP','MySQL'],
-    image: new URL('../pic/活動管理.png', import.meta.url).href,
-    images: [
-      new URL('../pic/活動管理.png', import.meta.url).href,
-      new URL('../pic/活動管理2.png', import.meta.url).href,
-      new URL('../pic/活動管理3.png', import.meta.url).href,
-    ],
-    description: '本專案為針對輔大校園活動建立一套數位化管理平台。透過 PHP 串接 MySQL 資料庫，實現一個具備動態資料處理能力的系統，系統涵蓋了從前端活動瀏覽到後端資料存取的完整流程。<br>此外，本系統特別實作了使用者權限分級機制，透過區分「管理員」與「一般學生」之身分，此權限控管邏輯不僅確保了後端行政資料的安全性，也優化了不同身分使用者的操作體驗。'
-  },
-  {
-    id: 5,
-    title: 'WISHOP',
-    tags: ['團隊', 'HTML', 'PHP','MySQL'],
-    image: new URL('../pic/witshop.png', import.meta.url).href,
-    images: [
-      new URL('../pic/witshop.png', import.meta.url).href,
-      new URL('../pic/witshop2.png', import.meta.url).href,
-      new URL('../pic/witshop3.png', import.meta.url).href,
-      new URL('../pic/witshop4.png', import.meta.url).href,
-      new URL('../pic/witshop5.png', import.meta.url).href,
-      new URL('../pic/witshop6.png', import.meta.url).href,
-      new URL('../pic/witshop7.png', import.meta.url).href,
-      new URL('../pic/witshop8.png', import.meta.url).href,
-      new URL('../pic/witshop9.png', import.meta.url).href
-    ],
-    description: '本專案為專題前的核心開發實作，從主題發想至技術開發皆由團隊獨立完成。我們打造了一個結合「許願」與「團購」概念的雙向購物平台，旨在打破傳統電商單向販售的模式。<br>系統具備完善的商務邏輯，使用者可自由建立個人賣場、發起團購活動；此外，平台核心特色為「許願區」功能，使用者可發布感興趣的商品需求，讓賣家能精準掌握市場導向並主動對接供應。技術上整合了前端介面、後端邏輯與資料庫管理，成功建構出一套從需求觸發到交易完成的完整商業閉環流程。'
-  },
-  {
-    id: 6,
-    title: 'Memonity',
-    tags: ['團隊', 'React', 'FastAPI','MySQL'],
-    image: new URL('../pic/Memonity.png', import.meta.url).href,
-    images: [
-      new URL('../pic/Memonity.png', import.meta.url).href,
-      new URL('../pic/Memonity2.png', import.meta.url).href,
-      new URL('../pic/Memonity3.png', import.meta.url).href,
-      new URL('../pic/Memonity4.png', import.meta.url).href,
-      new URL('../pic/Memonity5.png', import.meta.url).href,
-      new URL('../pic/Memonity6.png', import.meta.url).href,
-      new URL('../pic/Memonity7.png', import.meta.url).href
-    ],
-    description: '本專案為初次挑戰前後端分離架構的實務實作，採用React構建動態前端互動介面，並結合 FastAPI 打造高效能後端 API，搭配 MySQL 資料庫儲存結構化數據。<br>系統以「動漫心得分享平台」為主題，除了核心的評論互動功能外，更整合了 Python 爬蟲技術 抓取「巴哈姆特動畫瘋」之數據。此功能讓使用者在新增動漫資料時，系統能自動填充相關資訊，大幅提升操作效率與資料準確性。<br>在開發過程中，我從零掌握了此種架構模式，成功克服跨領域技術整合的挑戰。這不僅是我技術成長幅度最大的一門課程，也讓我對現代全端開發流程有了紮實且完整的掌握。'
-  },
-  {
-    id: 7,
-    title: '海獺冰淇淋',
-    tags: ['團隊', 'ASP.NET Web Forms'],
-    image: new URL('../pic/ice.png', import.meta.url).href,
-    images: [
-      new URL('../pic/ice.png', import.meta.url).href,
-      new URL('../pic/ice2.png', import.meta.url).href,
-      new URL('../pic/ice3.png', import.meta.url).href,
-      new URL('../pic/ice4.png', import.meta.url).href,
-      new URL('../pic/ice5.png', import.meta.url).href,
-      new URL('../pic/ice6.png', import.meta.url).href,
-    ],
-    description: '本專案使用 ASP.NET Web Forms 開發，實作一套功能完備的冰淇淋電商購物系統。系統涵蓋了前端使用者的商品瀏覽、購物車操作與訂單結帳流程，並建構了後端管理介面，實現賣家對商品上架、庫存維護及訂單狀態追蹤的全面管理。'
-  },
-  {
-    id: 8,
-    title: '輔大中國古籍整理學程(進度：90%)',
-    tags: ['團隊', 'Drupal'],
-    image: new URL('../pic/古籍.png', import.meta.url).href,
-    images: [
-      new URL('../pic/古籍2.png', import.meta.url).href,
-      new URL('../pic/古籍.png', import.meta.url).href,
-    ],
-    description: '這個專案的主要目標，是將輔仁大學中國古籍整理學程的既有官方網站，重新以 Drupal 內容管理系統進行改寫與重構，在保留原有資訊完整性的前提下，優化網站整體架構、提升內容管理與維護彈性，並進行版面與視覺呈現的美化，讓網站在使用體驗與視覺一致性上更加完善。<br>在實作過程中，我需要理解 Drupal 的核心概念，例如內容類型、欄位設計、區塊配置、選單結構與使用者權限，並依照學程網站的實際需求進行設定，同時調整版型配置與畫面呈現，使管理者未來能夠在後台更直覺地新增或修改內容，也讓前台介面更清楚、易讀。<br><div class="link-group text-link""><a href="https://web.lins.fju.edu.tw/ancientbook/web/" target="_blank">原網站</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://sandy.course.lins.fju.edu.tw/" target="_blank">改寫後的成果網站</a></div>'
+    description: '因 GitHub Pages 只能部署靜態網站，我想練習串接資料庫，於是開發了這個收藏與紀錄平台，讓使用者管理自己喜歡的動漫、漫畫、電影等作品。前端使用 Vue，後端資料儲存採用 Firebase，圖片則透過 Cloudinary 儲存，使收藏清單可以動態呈現作品封面與相關資訊。<br>目前還在利用課餘時間慢慢開發中'
   }
 ])
 
@@ -131,8 +25,8 @@ const openModal = (project) => {
   <section class="Coursework-section">
     <div class="container">
       <div class="title-wrapper">
-        <span class="title-bg-text">Coursework</span>
-        <h2 class="section-title">課堂作品</h2>
+        <span class="title-bg-text">Other Projects</span>
+        <h2 class="section-title">其他作品</h2>
         <div class="title-underline"></div>
       </div>
 

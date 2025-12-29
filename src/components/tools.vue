@@ -25,6 +25,7 @@
                     </div>
                     <div class="pill-group">
                         <span class="tech-pill">Python</span>
+                        <span class="tech-pill">PHP</span>
                         <span class="tech-pill">FastAPI</span>
                         <span class="tech-pill">ASP.NET Web Forms</span>
                     </div>
